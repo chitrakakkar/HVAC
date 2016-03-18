@@ -7,7 +7,7 @@ public class WaterHeater extends ServiceCall
 {
 
     protected Integer Age;
-    static final Integer MandatoryFee = 20;
+    protected static final Integer MandatoryFee = 20;
     public WaterHeater(String serviceAddress, String problemDescription, Date date,Integer age)
     {
         super(serviceAddress, problemDescription, date);
