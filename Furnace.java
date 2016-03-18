@@ -10,7 +10,8 @@ public class Furnace extends ServiceCall {
 
     private int furnaceType;
 
-    public Furnace(String serviceAddress, String problemDescription, Date date, int furnaceType) {
+    public Furnace(String serviceAddress, String problemDescription, Date date, int furnaceType)
+    {
 
         super(serviceAddress, problemDescription, date);
 

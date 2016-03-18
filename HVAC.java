@@ -16,7 +16,8 @@ public class HVAC {
     private static Scanner scanner;   //Global scanner used for all input
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
 
         //Use todayServiceCalls as a Queue
         //So, add new calls to the end with add()
@@ -35,7 +36,8 @@ public class HVAC {
 
         boolean quit = false;
 
-        while (!quit) {
+        while (!quit)
+        {
 
             System.out.println("1. Add service call to queue");
             System.out.println("2. Resolve current call");
@@ -147,13 +149,16 @@ public class HVAC {
 
         System.out.println("1. Add service call for furnace");
         System.out.println("2. Add service call for AC unit");
+        System.out.println("3.Add service call for Water heater");
         System.out.println("3. Quit");
 
         int choice = getPositiveIntInput();
 
-        switch (choice) {
+        switch (choice)
+        {
 
-            case 1: {
+            case 1:
+            {
 
                 System.out.println("Enter address of furnace");
                 String address = getStringInput();
@@ -176,7 +181,8 @@ public class HVAC {
                 break;
 
             }
-            case 2: {
+            case 2:
+            {
 
                 System.out.println("Enter address of AC Unit");
                 String address = getStringInput();
@@ -191,11 +197,23 @@ public class HVAC {
                 break;
 
             }
-            case 3: {
-                return;
+            case 3:
+            {
+                System.out.println("Enter address of Water-heater Unit");
+                String address = getStringInput();
+                System.out.println("Enter description of problem");
+                String problem = getStringInput();
+                System.out.println("Enter Age of AC unit");
+                Integer Age = getPositiveIntInput();
+
+                WaterHeater WH = new WaterHeater(address,problem,new Date(),Age);
+                todayServiceCalls.add(WH);
+                System.out.println("Added the following AC unit to list of calls:\n" + WH);
+                break;
 
             }
-            default: {
+            default:
+            {
                 System.out.println("Enter a number from the menu choices");
             }
 
@@ -206,13 +224,16 @@ public class HVAC {
 
     //Validation methods
 
-    private static int getPositiveIntInput() {
+    private static int getPositiveIntInput()
+    {
 
-        while (true) {
+        while (true)
+        {
             try {
                 String stringInput = scanner.nextLine();
                 int intInput = Integer.parseInt(stringInput);
-                if (intInput >= 0) {
+                if (intInput >= 0)
+                {
                     return intInput;
                 } else {
                     System.out.println("Please enter a positive number");
@@ -225,10 +246,13 @@ public class HVAC {
 
     }
 
-    private static double getPositiveDoubleInput() {
+    private static double getPositiveDoubleInput()
+    {
 
-        while (true) {
-            try {
+        while (true)
+        {
+            try
+            {
                 String stringInput = scanner.nextLine();
                 double doubleInput = Double.parseDouble(stringInput);
                 if (doubleInput >= 0) {

@@ -5,7 +5,8 @@ import java.util.Date;
 /**
  * Represents a generic service call to a furnace, boiler, AC unit...
  */
-public class ServiceCall {
+public class ServiceCall
+{
 
     protected String serviceAddress;
     protected String problemDescription;
